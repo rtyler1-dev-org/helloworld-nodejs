@@ -6,7 +6,6 @@ pipeline {
   }
   stages {
     stage('Test') {
-    agent { label 'nodejs-app' }
       steps {
         checkout scm
         container('nodejs') {
@@ -22,9 +21,7 @@ pipeline {
       }
       steps {
         echo "TODO - build and push image"
-        sh 'java -version'
       }
     }
   }
 }
- 
