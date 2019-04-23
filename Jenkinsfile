@@ -4,9 +4,8 @@ pipeline {
     buildDiscarder(logRotator(numToKeepStr: '2'))
     skipDefaultCheckout true
   }
- 
-      stage('Test') {
-      agent { label 'nodejs-app' }
+  stages {
+    stage('Test') {
       steps {
         checkout scm
         container('nodejs') {
